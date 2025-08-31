@@ -1566,7 +1566,7 @@
 								<Child Name="TextBlock" Owner="{09FA8584-59A9-4A9D-AFF3-3C5FFF2D4A21}" />
 							</Child>
 						</Child>
-						<Child Name="Controles_de_exibi_o" Owner="{1AF79915-94E2-4EC2-9768-49F71547418C}">
+						<Child Name="Controles" Owner="{1AF79915-94E2-4EC2-9768-49F71547418C}">
 							<Child Name="Backspace" Owner="{3E4AB98A-1E68-4767-8AB5-4E1A6CFA5BE1}">
 								<Child Name="TextBlock" Owner="{ED5B36A0-54B0-4936-952C-9C2ACEA11B86}" />
 							</Child>

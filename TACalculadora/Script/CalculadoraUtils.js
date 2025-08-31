@@ -64,7 +64,7 @@ function clickBut(button) {
   // Cria atalhos para os principais grupos de botões dentro da calculadora.
   const numbers = calc.Teclado;            // Agrupa os botões de 0 a 9 e o separador decimal.
   const operations = calc.Operadores_padrao; // Agrupa os botões de operações (+, -, *, /, =).
-  const controls = calc.Controles_de_exibi__o; // Agrupa os botões de controle (CE, C).
+  const controls = calc.Controles; // Agrupa os botões de controle (CE, C).
   // --- Mapeamento de Botões para Ações ---
   // Cria um "mapa" (ou dicionário) que associa a string de entrada ('botao') a uma função
   // que executa o clique no elemento de interface correspondente.
@@ -89,10 +89,12 @@ function clickBut(button) {
       "*": () => operations.Multiplicar_por.Click(),
       "/": () => operations.Dividir_por.Click(),
       "=": () => operations.Igual_a.Click(),
+      "√": () => operations.Raiz_quadrada.Click(),
+      "%": () => operations.Por_cento.Click(),
 
       // Controles
       "CE": () => controls.Limpar_entrada.Click(),
-      "CA": () => controls.Limpar.Click()
+      "C": () => controls.Limpar.Click()
   };
 
   // --- Lógica de Execução ---
@@ -148,7 +150,7 @@ function checkResult(resultExpected) {
     // Se os valores forem diferentes, o teste falhou nesta verificação.
     // Registra uma mensagem de erro detalhada. É uma boa prática mostrar tanto o valor
     // esperado quanto o obtido para facilitar a identificação e correção do problema.
-    Log.Error("❌ FALHA: Esperado: '" + resultExpected + "' | Obtido: '" + resultObtained + "'");
+    Log.Error("❌ Fail Esperado: '" + resultExpected + "' | Obtido: '" + resultObtained + "'");
   }
 }
 

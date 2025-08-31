@@ -20,7 +20,134 @@
 <Nodes version="1">
 	<Node name="root">
 		<Node name="folders"/>
-		<Node name="logs"/>
+		<Node name="logs">
+			<Node name="log idx=0000">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7034646991"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{1F04D063-BE04-4322-A5AD-9F401CECEEAD}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_16_52_59_350\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0001">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7050341667"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{E19232EE-B690-4DC7-A66E-552453F02C20}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\multiplication]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_16_55_14_954\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0002">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7059456713"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{701AAF51-EFF8-4863-874A-CD842CC7CDE3}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\multiplication]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_16_56_33_706\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0003">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7068971875"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{72B941A0-4589-4FE6-84A7-F057DADC2BC4}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_16_57_55_917\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0004">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.708089919"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{DA8107CF-E20C-4EF3-B05E-A4CC48663C9E}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\sum]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_16_59_38_969\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0005">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7082247338"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{0B610883-5BA2-4BCC-83F5-941876B2FBF1}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\sum]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_16_59_50_617\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0006">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.708434375"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{0D246C56-4075-4B5D-BEE7-B40592378F4C}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_17_00_08_730\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0007">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7087460532"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{43CA44AF-2FD9-40B8-AB9D-861E89848E2C}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_17_00_35_659\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0008">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7655736343"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{5180561B-6531-4C2B-A7B8-7D74CFD61484}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_18_22_25_562\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0009">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7670752662"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{677E35BB-06EB-46B5-8D20-3DBF022DA12F}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\divisionByZero]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_18_24_35_303\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0010">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7672261343"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{2274CCA8-9973-4F9A-B91D-92AC672A9AD2}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_18_24_48_338\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
+			<Node name="log idx=0011">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7707427431"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{F122DE4D-4F23-4AF9-82F3-0D80ABB9E37F}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\Test]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_18_29_52_173\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0012">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7713882176"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{FE592646-38C1-4AAD-BAD7-6FD9725D991E}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\percentage]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_18_30_47_942\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+			<Node name="log idx=0013">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.7716055787"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{5CD06708-7779-48C0-9836-3BEB89014ADB}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculadoraScripts\squareRoot]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_18_31_06_722\Description.tcLog"/>
+				<Prp name="status" type="I" value="2"/>
+			</Node>
+		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="11.0"/>
 	</Node>
