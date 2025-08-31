@@ -78,6 +78,15 @@ Calculadora-TestComplete-Viasoft/
 | Documentação de uso de IA registrada      | ✅ |
 
 ---
+## 🚧 Principais Desafios no Desenvolvimento
+
+**Durante o desenvolvimento do projeto, enfrentei algumas dificuldades:**
+
+ - Configuração do TestComplete com a Calculadora do Windows: A aplicação não era reconhecida corretamente pelo TestComplete, impossibilitando o reconhecimento de componentes da interface (UI) e a execução de testes automatizados. Para contornar, precisei utilizar o PC de um terceiro onde a ferramenta funcionava.
+ - Aprendizado de linguagem: Apesar de não ter conhecimento prévio em JavaScript, consegui aprendê-la rapidamente, aproveitando semelhanças com a linguagem C.
+ - Padronização de QA: Entender e aplicar padrões de projetos de Quality Assurance também exigiu dedicação, mas foi uma experiência enriquecedora.
+   
+Esses desafios fortaleceram minhas habilidades em testes automatizados, **desenvolvimento em QA e resolução de problemas técnicos**.
 
 ## 👨‍💻 Autor
 Projeto desenvolvido como parte do desafio proposto pela **Viasoft**.  
