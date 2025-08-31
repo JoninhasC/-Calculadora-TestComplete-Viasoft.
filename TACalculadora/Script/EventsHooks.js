@@ -1,14 +1,89 @@
-﻿function EventsHooks_OnStartTest(Sender){
-  Log.Message("Projeto será iniciado.");
-  TestedApps.calc.Run();
+﻿// Importa o módulo "CalculadoraUtils". Um módulo é um arquivo de script separado
+// que contém funções reutilizáveis. Neste caso, ele provavelmente contém a função
+// "garantirCalculadoraAberta" e outras funções úteis para interagir com a calculadora.
+var CalculadoraUtils = require("CalculadoraUtils");
+
+/**
+ * Função de utilidade para fechar a calculadora.
+ * Ela é encapsulada aqui para ser reutilizada, especialmente no final do teste.
+ */
+function closeCalculator() {
+  // Procura pelo processo da calculadora, aguardando até 1 segundo para encontrá-lo.
+  const processo = Sys.WaitProcess("Microsoft.WindowsCalculator", 1000);
+
+  // Se o processo for encontrado (ou seja, se a calculadora estiver aberta)...
+  if (processo.Exists) {
+    Log.Message("Closing the calculator...");
+    // ...envia um comando para o sistema operacional para finalizar o processo.
+    processo.Terminate();
+  }
 }
 
-function EventsHooks_OnStopTest(Sender){
-  Log.Message("Projeto executado com sucesso. Aplicação será encerrada.");
-  Sys.Process("Microsoft.WindowsCalculator").Terminate();
+
+// --- MANIPULADORES DE EVENTOS (EVENT HANDLERS) ---
+// Estas são funções especiais que a ferramenta de automação (como TestComplete)
+// executa automaticamente quando certos eventos ocorrem durante o ciclo de vida do teste.
+
+/**
+ * Evento: Ao Iniciar o Teste (OnStartTest).
+ * Esta função é executada automaticamente uma única vez, no exato início da suíte de testes.
+ * É o local ideal para configurar o ambiente de teste.
+ * @param {object} Sender - O objeto que disparou o evento.
+ */
+function Events_OnStartTest(Sender) {
+  Log.Message("Starting the test....");
+  // Chama uma função do módulo importado para garantir que a calculadora esteja aberta.
+  // Isso prepara o "ambiente" para que os casos de teste possam ser executados.
+  CalculadoraUtils.garantirCalculadoraAberta();
 }
 
-function EventsHooks_OnLogError(Sender, LogParams){
-  Log.Message("Projeto está com erro. Aplicação será encerrada.");
-  Sys.Process("Microsoft.WindowsCalculator").Terminate();
+/**
+ * Evento: Ao Finalizar o Teste (OnStopTest).
+ * Esta função é executada automaticamente uma única vez, quando a suíte de testes termina.
+ * É o local ideal para realizar a limpeza do ambiente (teardown).
+ * @param {object} Sender - O objeto que disparou o evento.
+ */
+function Events_OnStopTest(Sender) {
+  Log.Message("Test completed.");
+  // Chama a função local para fechar a calculadora, garantindo que o sistema
+  // fique em um estado limpo após a execução dos testes.
+  closeCalculator();
 }
+
+/**
+ * Evento: Ao Registrar um Erro (OnLogError).
+ * Esta função é acionada sempre que um erro é registrado no log durante o teste.
+ * Permite personalizar a forma como os erros são tratados.
+ * @param {object} Sender - O objeto que disparou o evento.
+ * @param {object} LogParams - Parâmetros do log, incluindo a mensagem de erro.
+ */
+function Events_OnLogError(Sender, LogParams) {
+  // Apenas para garantir que a mensagem de erro original ainda seja registrada.
+  Log.Error("❌ Erro: " + LogParams.Str);
+  // Captura uma imagem da tela inteira no momento do erro e a anexa ao log.
+  // Isso é extremamente útil para diagnosticar falhas visuais.
+  Log.Picture(Sys.Desktop.Picture(), "Screenshot do erro");
+}
+
+/**
+ * Evento: Ao Encontrar uma Janela Inesperada (OnUnexpectedWindow).
+ * Acionado quando uma janela que não é mapeada no projeto (um pop-up, alerta, etc.) aparece.
+ * Permite tratar interrupções de forma inteligente.
+ * @param {object} Sender - O objeto que disparou o evento.
+ * @param {object} Window - O objeto que representa a janela inesperada.
+ * @param {object} LogParams - Parâmetros do log associados ao evento.
+ */
+function Events_OnUnexpectedWindow(Sender, Window, LogParams) {
+  // Registra um aviso no log, incluindo o título da janela para identificação.
+  Log.Warning("⚠ Unexpected window:: " + Window.Caption);
+  // Tenta fechar a janela inesperada para que o teste possa, idealmente, continuar.
+  Window.Close();
+  // Informa à ferramenta de automação que este evento foi tratado.
+  // Isso impede que o comportamento padrão (que geralmente é registrar um erro e parar o teste) seja executado.
+  LogParams.Locked = true;
+}
+
+// --- EXPORTAÇÃO DE MÓDULO ---
+// Torna a função "fecharCalculadora" pública para que outros scripts no projeto
+// possam importá-la e utilizá-la usando 'require'.
+module.exports.closeCalculator = closeCalculator;

@@ -1538,7 +1538,7 @@
 								<Child Name="TextBlock" Owner="{B32E2681-302F-402E-88F9-CFDAEB31C66F}" />
 							</Child>
 						</Child>
-						<Child Name="Operadores_padr_o" Owner="{339B9959-F404-465E-A85F-333D8465685B}">
+						<Child Name="Operadores_padrao" Owner="{339B9959-F404-465E-A85F-333D8465685B}">
 							<Child Name="Igual_a" Owner="{4C7F3C9A-FF42-4D1B-9D66-A98222DBE940}">
 								<Child Name="TextBlock" Owner="{D87D6A63-7711-4B1F-BF3A-AB0971D35CDD}" />
 							</Child>
