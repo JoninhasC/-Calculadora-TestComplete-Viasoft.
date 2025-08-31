@@ -73,16 +73,32 @@ function division() {
 }
 
 function divisionByZero() {
-  openCalculator();
-  Log.AppendFolder("Test: Division By Zero");
+  openCalculator();
+  Log.AppendFolder("Test: Division By Zero");
 
-  let a = randomInt(1, 200);
-  doOperation(a, 0, "/", "Não é possível dividir por zero");
+  // Primeiro teste com a variável 'a'
+  let a = randomInt(0, 200);
 
-  let b = randomInt(1, 200);
-  doOperation(b, 0, "/", "Não é possível dividir por zero");
+  // Verifica se o numerador 'a' é zero
+  if (a === 0) {
+    // Se for 0/0, o resultado esperado é "Resultado indefinido"
+    doOperation(a, 0, "/", "Resultado indefinido");
+  } else {
+    // Caso contrário, para qualquer outro número dividido por zero...
+    doOperation(a, 0, "/", "Não é possível dividir por zero");
+  }
 
-  Log.PopLogFolder();
+  // Segundo teste com a variável 'b'
+  let b = randomInt(0, 200);
+
+  // A mesma lógica de verificação para 'b'
+  if (b === 0) {
+    doOperation(b, 0, "/", "Resultado indefinido");
+  } else {
+    doOperation(b, 0, "/", "Não é possível dividir por zero");
+  }
+
+  Log.PopLogFolder();
 }
 
 function Test() {
