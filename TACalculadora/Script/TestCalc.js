@@ -1,6 +1,6 @@
-﻿var CalculatorUteils = require("CalculatorUteils");
+﻿var CalculatorUteils = require("CalculadoraUtils");
 var clickBut = CalculatorUteils.clickBut;
-function teste() {
+function test() {
 
   clickBut("1");
   clickBut("+");

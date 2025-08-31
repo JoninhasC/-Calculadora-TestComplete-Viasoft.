@@ -62,37 +62,37 @@ function clickBut(button) {
     return;
   }
   // Cria atalhos para os principais grupos de botões dentro da calculadora.
-  const numeros = calc.Teclado;            // Agrupa os botões de 0 a 9 e o separador decimal.
-  const operacoes = calc.Operadores_padrao; // Agrupa os botões de operações (+, -, *, /, =).
-  const controles = calc.Controles_de_exibi__o; // Agrupa os botões de controle (CE, C).
+  const numbers = calc.Teclado;            // Agrupa os botões de 0 a 9 e o separador decimal.
+  const operations = calc.Operadores_padrao; // Agrupa os botões de operações (+, -, *, /, =).
+  const controls = calc.Controles_de_exibi__o; // Agrupa os botões de controle (CE, C).
   // --- Mapeamento de Botões para Ações ---
   // Cria um "mapa" (ou dicionário) que associa a string de entrada ('botao') a uma função
   // que executa o clique no elemento de interface correspondente.
   // Essa abordagem é mais limpa, legível e eficiente do que usar uma longa sequência de 'if/else' ou um 'switch'.
   const map = {
       // Números
-      "0": () => numeros.Zero.Click(),
-      "1": () => numeros.Um.Click(),
-      "2": () => numeros.Dois.Click(),
-      "3": () => numeros.Tres.Click(),
-      "4": () => numeros.Quatro.Click(),
-      "5": () => numeros.Cinco.Click(),
-      "6": () => numeros.Seis.Click(),
-      "7": () => numeros.Sete.Click(),
-      "8": () => numeros.Oito.Click(),
-      "9": () => numeros.Nove.Click(),
-      ",": () => numeros.Separador_decimal.Click(),
+      "0": () => numbers.Zero.Click(),
+      "1": () => numbers.Um.Click(),
+      "2": () => numbers.Dois.Click(),
+      "3": () => numbers.Tres.Click(),
+      "4": () => numbers.Quatro.Click(),
+      "5": () => numbers.Cinco.Click(),
+      "6": () => numbers.Seis.Click(),
+      "7": () => numbers.Sete.Click(),
+      "8": () => numbers.Oito.Click(),
+      "9": () => numbers.Nove.Click(),
+      ",": () => numbers.Separador_decimal.Click(),
 
       // Operações
-      "+": () => operacoes.Mais.Click(),
-      "-": () => operacoes.Menos.Click(),
-      "*": () => operacoes.Multiplicar_por.Click(),
-      "/": () => operacoes.Dividir_por.Click(),
-      "=": () => operacoes.Igual_a.Click(),
+      "+": () => operations.Mais.Click(),
+      "-": () => operations.Menos.Click(),
+      "*": () => operations.Multiplicar_por.Click(),
+      "/": () => operations.Dividir_por.Click(),
+      "=": () => operations.Igual_a.Click(),
 
       // Controles
-      "CE": () => controles.Limpar_entrada.Click(),
-      "CA": () => controles.Limpar.Click()
+      "CE": () => controls.Limpar_entrada.Click(),
+      "CA": () => controls.Limpar.Click()
   };
 
   // --- Lógica de Execução ---
@@ -115,22 +115,88 @@ function clickBut(button) {
   Log.PopLogFolder();
 }
 
-function checkResult(resultadoEsperado) {
+/**
+ * Compara um resultado esperado com o valor atualmente exibido no display da calculadora.
+ * Registra uma mensagem de sucesso ou erro no log de teste com base na comparação.
+ * Esta é uma função de "asserção" ou "verificação", fundamental em testes automatizados.
+ *
+ * @param {string} resultExpected - O valor (em formato de texto) que se espera encontrar no display da calculadora.
+ */
+function checkResult(resultExpected) {
+  // --- Obtenção do Resultado Atual ---
+
+  // Navega pela árvore de objetos da interface da calculadora para encontrar o elemento do display.
+  // ".UIAObject("A_exibição_é_*")" é um localizador que usa a automação de interface do usuário (UIA)
+  // para encontrar um objeto cujo nome começa com "A exibição é ". O asterisco (*) é um curinga.
+  // Isso torna o localizador mais robusto a pequenas mudanças no texto de acessibilidade.
   const resultObtained = Aliases.Microsoft_WindowsCalculator
     .Calculadora.NavView.LandmarkTarget
     .UIAObject("A_exibição_é_*")
     .UIAObject("TextContainer")
-    .UIAObject("NormalOutput").Text.trim();
+    .UIAObject("NormalOutput")
+    .Text // Pega o conteúdo de texto do elemento (ex: "1.234")
+    .trim(); // Remove espaços em branco no início ou no fim da string, garantindo uma comparação precisa.
 
+  // --- Comparação e Log ---
+
+  // Compara o valor esperado (passado como argumento para a função) com o valor obtido da tela.
   if (resultExpected == resultObtained) {
-    Log.Message("✅ SUCESSO: " + resultObtained);
+    // Se os valores forem iguais, o teste passou nesta verificação.
+    // Registra uma mensagem de sucesso clara no log.
+    Log.Message("✅ SUCESSO: O resultado '" + resultObtained + "' está correto.");
   } else {
-    Log.Error("❌ Esperado: " + resultExpected + " | Obtido: " + resultObtained);
+    // Se os valores forem diferentes, o teste falhou nesta verificação.
+    // Registra uma mensagem de erro detalhada. É uma boa prática mostrar tanto o valor
+    // esperado quanto o obtido para facilitar a identificação e correção do problema.
+    Log.Error("❌ FALHA: Esperado: '" + resultExpected + "' | Obtido: '" + resultObtained + "'");
   }
+}
+
+/**
+ * Executa uma expressão matemática completa e verifica o resultado.
+ * A função recebe uma string no formato "OPERAÇÃO=RESULTADO" (ex: "12+8=20"),
+ * simula os cliques dos botões da operação e, ao final, valida se o resultado
+ * exibido na calculadora corresponde ao resultado esperado.
+ *
+ * @param {string} expression - A expressão completa a ser testada.
+ */
+function calculate(expression) {
+  
+  // Divide a string de entrada em duas partes usando o "=" como separador.
+  // Ex: "12+8=20" se torna o array ['12+8', '20'].
+  // Em seguida, usa "atribuição via desestruturação" para criar duas variáveis:
+  // 'operations' recebe '12+8'
+  // 'resultExpected' recebe '20'
+  let [operations, resultExpected] = expression.split("=");
+
+
+  // Clica no botão "CE" (Limpar Entrada) para garantir que a calculadora
+  // esteja zerada antes de iniciar uma nova operação. Isso evita que
+  // cálculos anteriores interfiram no teste atual.
+  clickBut("CE");
+
+
+  // Itera sobre cada caractere da string 'operations'.
+  // Ex: Para '12+8', o loop executará 4 vezes.
+  for (let i = 0; i < operations.length; i++) {
+    // Para cada caractere ('1', '2', '+', '8'), chama a função 'clickBut'.
+    // Isso simula um usuário pressionando cada botão na calculadora em sequência.
+    clickBut(operations[i]);
+  }
+  
+  clickBut("=");
+
+ 
+  // Após inserir a operação e obter o resultado, chama a função 'checkResult'.
+  // Ela irá comparar o que está no display da calculadora com o 'resultExpected'
+  // que foi extraído da string de expressão no início.
+  checkResult(resultExpected);
 }
 
 // exporta as funções para outros scripts do TestComplete poderem usar
 module.exports = {
    openCalculator: openCalculator,
-   clickBut:  clickBut
+   clickBut: clickBut,
+   checkResult: checkResult,
+   calculate: calculate
 };

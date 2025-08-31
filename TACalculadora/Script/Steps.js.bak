@@ -1,0 +1,25 @@
+﻿var { openCalculator, clickBut, checkResult } = require("CalculadoraUtils");
+var { closeCalculator } = require("EventsHooks");
+
+let resultExpected = "";
+
+Given("that the user opens the calculator", function () {
+  openCalculator();
+});
+
+When("the user types {string}", function (number) {
+  numero.split("").forEach(ch => clickBut(ch));
+});
+
+When("o usuário pressiona {string}", function (button) {
+  clickBut(botao);
+});
+
+Then("o resultado deve ser {string}", function (result) {
+  resultExpected = result;
+  checkResult(resultExpected);
+});
+
+Then("the user closes the calculator", function () {
+  closeCalculator();
+});
