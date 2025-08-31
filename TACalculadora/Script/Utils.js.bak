@@ -1,0 +1,54 @@
+﻿
+
+function openCalculator(){
+  // espera pelo processo; se não existir, executa a entrada TestedApps chamada "calc"
+  var proc = Sys.WaitProcess("Microsoft.WindowsCalculator", 1000);
+  if(!proc.Exists){
+    Log.Message("Calculator initializing...");
+    TestedApps.calc.Run();
+    try{
+      
+     Aliases.Microsoft_WindowsCalculator.WaitProperty("Exists", true, 5000);
+    } catch (e){
+       // se o alias não existir (ainda não mapeado), apenas aguarda um pouco para estabilidade
+        aqUtils.Delay(800);
+    }
+    aqUtils.Delay(300);
+  } else {
+    Log.Message("Open Calculator...")
+  }
+
+}
+
+
+function closeCalculator() {
+  var proc = Sys.WaitProcess("Microsoft.WindowsCalculator", 1000);
+  if (proc.Exists) {
+    Log.Message("Closing Calculator...");
+    proc.Terminate();
+    // espera até o processo desaparecer (até 5s)
+    proc.WaitProperty("Exists", false, 5000);
+    Log.Message("Calculator closed.");
+  } else {
+    Log.Message(" The calculator was already closed.");
+  }
+}
+
+function clickBut (){
+  
+}
+
+function calculate(){
+  
+}
+
+function checkResult (){
+  
+
+}
+
+// exporta as funções para outros scripts do TestComplete poderem usar
+module.exports = {
+ openCalculator: openCalculator,
+  closeCalculator: closeCalculator
+};

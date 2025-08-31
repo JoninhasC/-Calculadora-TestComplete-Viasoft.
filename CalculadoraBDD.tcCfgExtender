@@ -21,13 +21,9 @@
 	<Node name="root">
 		<Node name="data">
 			<Node name="{24b6fa0b-0143-461a-9758-aeb9e9a9428b}">
-				<Prp name="activity" type="S" value="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}"/>
+				<Prp name="activity" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
 			</Node>
-			<Node name="{2c786620-2489-4cbb-9c1e-1a94437a9245}">
-				<Node name="{bf12387e-cb96-4cab-b608-20e6d51ed90e}">
-					<Prp name="hash" type="I" value="1"/>
-				</Node>
-			</Node>
+			<Node name="{2c786620-2489-4cbb-9c1e-1a94437a9245}"/>
 			<Node name="{415b5aa1-c6ac-4d4d-9a53-063a521a45ab}">
 				<Node name="workspace">
 					<Node name="0">
@@ -119,6 +115,7 @@
 						<Prp name="collapsed" type="B" value="0"/>
 						<Prp name="top" type="I" value="0"/>
 					</Node>
+					<Node name="{507b4e60-5686-4352-bd45-1e40b52152f0}"/>
 					<Node name="{7421b93c-a641-4f45-8c6d-c938ea45bd31}"/>
 					<Node name="{9f6c5c6a-cd20-4837-888b-488d67dbb250}">
 						<Prp name="bottom" type="I" value="0"/>
@@ -130,16 +127,54 @@
 						<Prp name="collapsed" type="B" value="0"/>
 						<Prp name="top" type="I" value="0"/>
 					</Node>
+					<Node name="{ef0fa92a-6062-4b3e-b80d-d35900ab1b5c}"/>
 				</Node>
 			</Node>
 			<Node name="{dadeeeea-7bf7-4f7b-98d1-fc8ffe5fedae}">
-				<Node name="{02542b04-194a-4903-b727-27ddea5f3f24}"/>
+				<Node name="{02542b04-194a-4903-b727-27ddea5f3f24}">
+					<Node name="0">
+						<Prp name="column" type="I" value="0"/>
+						<Prp name="description" type="S" value=""/>
+						<Prp name="line" type="I" value="0"/>
+						<Prp name="number" type="I" value="10"/>
+						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
+					</Node>
+					<Node name="1">
+						<Prp name="column" type="I" value="0"/>
+						<Prp name="description" type="S" value=""/>
+						<Prp name="line" type="I" value="21"/>
+						<Prp name="number" type="I" value="10"/>
+						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
+					</Node>
+					<Node name="2">
+						<Prp name="column" type="I" value="0"/>
+						<Prp name="description" type="S" value=""/>
+						<Prp name="line" type="I" value="34"/>
+						<Prp name="number" type="I" value="0"/>
+						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
+					</Node>
+					<Node name="3">
+						<Prp name="column" type="I" value="0"/>
+						<Prp name="description" type="S" value=""/>
+						<Prp name="line" type="I" value="38"/>
+						<Prp name="number" type="I" value="1"/>
+						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
+					</Node>
+					<Node name="4">
+						<Prp name="column" type="I" value="0"/>
+						<Prp name="description" type="S" value=""/>
+						<Prp name="line" type="I" value="42"/>
+						<Prp name="number" type="I" value="3"/>
+						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
+					</Node>
+				</Node>
 				<Node name="{8ee82d46-af98-4371-988c-39e367c94873}"/>
 			</Node>
 			<Node name="{fc9c0755-2819-4b25-8964-06a87b81e1ad}">
 				<Node name="calculadorabdd">
 					<Node name="tacalculadora">
 						<Node name="events"/>
+						<Node name="scenarios"/>
 						<Node name="script"/>
 						<Node name="testedapps"/>
 					</Node>

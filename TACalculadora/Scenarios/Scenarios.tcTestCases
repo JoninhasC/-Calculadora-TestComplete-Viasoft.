@@ -1,2 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Scenarios />
+<Scenarios>
+	<Feature Path="Description of the new feature1.feature" />
+</Scenarios>

@@ -39,6 +39,15 @@
 				<Prp name="relpath" type="S" value="27_08_2025_19_02_29_178\Description.tcLog"/>
 				<Prp name="status" type="I" value="0"/>
 			</Node>
+			<Node name="log idx=0002">
+				<Prp name="caption" type="S" value=""/>
+				<Prp name="datetime" type="D" value="45900.5996175116"/>
+				<Prp name="description" type="S" value=""/>
+				<Prp name="key" type="S" value="{985795FE-6BA4-40BC-BF50-5091A74A50AE}"/>
+				<Prp name="nameofroot" type="S" value="Script Test Log [CalculatorUteils\openCalculator]"/>
+				<Prp name="relpath" type="S" value="31_08_2025_14_23_26_953\Description.tcLog"/>
+				<Prp name="status" type="I" value="0"/>
+			</Node>
 		</Node>
 		<Prp name="signature" type="S" value="{681DCC69-A39F-4C4D-8E7D-B2D9362FAF4F}"/>
 		<Prp name="version" type="S" value="11.0"/>
