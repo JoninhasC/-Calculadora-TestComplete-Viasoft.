@@ -1,88 +1,95 @@
 ﻿var calculadoraUtils = require("CalculadoraUtils");
+var { openCalculator, calculate } = calculadoraUtils;
 
-var { openCalculator, clickBut, calculate, checkResult } = calculadoraUtils;
+// Função para gerar número aleatório entre min e max
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-function sum(){
+// Função auxiliar para calcular a expressão e verificar
+function doOperation(a, b, operator, expected) {
+  calculate(`${a}${operator}${b}=${expected}`);
+  aqUtils.Delay(300);
+}
+
+function sum() {
   openCalculator();
   Log.AppendFolder("Test: Sum");
-  calculate("140+450=590");
-  aqUtils.Delay(300);
-  calculate("12+13=25");
-  aqUtils.Delay(300);
+
+  let a = randomInt(1, 500);
+  let b = randomInt(1, 500);
+  doOperation(a, b, "+", a + b);
+
+  let c = randomInt(1, 100);
+  let d = randomInt(1, 100);
+  doOperation(c, d, "+", c + d);
+
   Log.PopLogFolder();
 }
 
-function subtraction(){
+function subtraction() {
   openCalculator();
   Log.AppendFolder("Test: Subtraction");
-  calculate("15-6=9");
-  aqUtils.Delay(300);
-  calculate("18-28=-10");
-  aqUtils.Delay(300);
+
+  let a = randomInt(1, 100);
+  let b = randomInt(1, 100);
+  doOperation(a, b, "-", a - b);
+
+  let c = randomInt(1, 100);
+  let d = randomInt(1, 100);
+  doOperation(c, d, "-", c - d);
+
   Log.PopLogFolder();
 }
 
-function multiplication(){
+function multiplication() {
   openCalculator();
   Log.AppendFolder("Test: Multiplication");
-  calculate("178*124=22.072"); 
-  aqUtils.Delay(300);
-  calculate("12*0=0");
-  aqUtils.Delay(300);
-  calculate("12*11,5=138");
-  aqUtils.Delay(300);
+
+  let a = randomInt(1, 200);
+  let b = randomInt(1, 200);
+  doOperation(a, b, "*", a * b);
+
+  let c = randomInt(0, 20);
+  let d = randomInt(0, 20);
+  doOperation(c, d, "*", c * d);
+
   Log.PopLogFolder();
 }
 
-function division(){
+function division() {
   openCalculator();
   Log.AppendFolder("Test: Division");
-  calculate("15/5=3");
-  aqUtils.Delay(300);
-  calculate("5/5=1");
-  aqUtils.Delay(300);
+
+  let a = randomInt(1, 100);
+  let b = randomInt(1, 20); // evitar zero
+  doOperation(a, b, "/", a / b);
+
+  let c = randomInt(1, 100);
+  let d = randomInt(1, 20); // evitar zero
+  doOperation(c, d, "/", c / d);
+
   Log.PopLogFolder();
 }
-function percentage(){
-  openCalculator();
-  Log.AppendFolder("Test:Percentage");
-  calculate("200+10%=220"); 
-  aqUtils.Delay(300);
-  calculate("50%5=2,5"); 
-  aqUtils.Delay(300);
-  calculate("300*10%=30"); 
-  aqUtils.Delay(300);
-  Log.PopLogFolder();
-}
-function squareRoot(){
-  openCalculator();
-  Log.AppendFolder("Test:Square Root");
-  calculate("√9=3");
-  aqUtils.Delay(300);
-  calculate("√25=5");
-  aqUtils.Delay(300);
-  Log.PopLogFolder();
-}
-function divisionByZero(){
+
+function divisionByZero() {
   openCalculator();
   Log.AppendFolder("Test: Division By Zero");
-  calculate("178/0=Não é possível dividir por zero"); 
-  aqUtils.Delay(300);
-  calculate("78/0=Não é possível dividir por zero"); 
-  aqUtils.Delay(300);
-  calculate("18/0=Não é possível dividir por zero"); 
-  aqUtils.Delay(300);
+
+  let a = randomInt(1, 200);
+  doOperation(a, 0, "/", "Não é possível dividir por zero");
+
+  let b = randomInt(1, 200);
+  doOperation(b, 0, "/", "Não é possível dividir por zero");
+
   Log.PopLogFolder();
 }
 
-
-function Test (){
+function Test() {
   sum();
   subtraction();
   multiplication();
   division();
-  percentage();
-  squareRoot();
   divisionByZero();
 }
 

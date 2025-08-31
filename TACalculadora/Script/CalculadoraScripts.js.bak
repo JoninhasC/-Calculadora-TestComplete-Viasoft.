@@ -43,6 +43,26 @@ function division(){
   aqUtils.Delay(300);
   Log.PopLogFolder();
 }
+function percentage(){
+  openCalculator();
+  Log.AppendFolder("Test:Percentage");
+  calculate("200+10%=220"); 
+  aqUtils.Delay(300);
+  calculate("50%5=2,5"); 
+  aqUtils.Delay(300);
+  calculate("300*10%=30"); 
+  aqUtils.Delay(300);
+  Log.PopLogFolder();
+}
+function squareRoot(){
+  openCalculator();
+  Log.AppendFolder("Test:Square Root");
+  calculate("√9=3");
+  aqUtils.Delay(300);
+  calculate("√25=5");
+  aqUtils.Delay(300);
+  Log.PopLogFolder();
+}
 function divisionByZero(){
   openCalculator();
   Log.AppendFolder("Test: Division By Zero");
@@ -61,6 +81,8 @@ function Test (){
   subtraction();
   multiplication();
   division();
+  percentage();
+  squareRoot();
   divisionByZero();
 }
 

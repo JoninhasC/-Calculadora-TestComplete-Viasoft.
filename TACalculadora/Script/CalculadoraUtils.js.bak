@@ -89,6 +89,8 @@ function clickBut(button) {
       "*": () => operations.Multiplicar_por.Click(),
       "/": () => operations.Dividir_por.Click(),
       "=": () => operations.Igual_a.Click(),
+      "√": () => operations.Raiz_quadrada.Click(),
+      "%": () => operations.Por_cento.Click(),
 
       // Controles
       "CE": () => controls.Limpar_entrada.Click(),
@@ -122,35 +124,35 @@ function clickBut(button) {
  *
  * @param {string} resultExpected - O valor (em formato de texto) que se espera encontrar no display da calculadora.
  */
-function checkResult(resultExpected) {
-  // --- Obtenção do Resultado Atual ---
+function normalizeNumber(text) {
+  // Remove pontos de milhar e substitui vírgula decimal por ponto
+  return text.replace(/\./g, "").replace(",", ".");
+}
 
-  // Navega pela árvore de objetos da interface da calculadora para encontrar o elemento do display.
-  // ".UIAObject("A_exibição_é_*")" é um localizador que usa a automação de interface do usuário (UIA)
-  // para encontrar um objeto cujo nome começa com "A exibição é ". O asterisco (*) é um curinga.
-  // Isso torna o localizador mais robusto a pequenas mudanças no texto de acessibilidade.
+function checkResult(resultExpected) {
   const resultObtained = Aliases.Microsoft_WindowsCalculator
     .Calculadora.NavView.LandmarkTarget
     .UIAObject("A_exibição_é_*")
     .UIAObject("TextContainer")
     .UIAObject("NormalOutput")
-    .Text // Pega o conteúdo de texto do elemento (ex: "1.234")
-    .trim(); // Remove espaços em branco no início ou no fim da string, garantindo uma comparação precisa.
+    .Text
+    .trim();
 
-  // --- Comparação e Log ---
+  // Normaliza
+  const normalizedExpected = normalizeNumber(resultExpected);
+  const normalizedObtained = normalizeNumber(resultObtained);
 
-  // Compara o valor esperado (passado como argumento para a função) com o valor obtido da tela.
-  if (resultExpected == resultObtained) {
-    // Se os valores forem iguais, o teste passou nesta verificação.
-    // Registra uma mensagem de sucesso clara no log.
+  // Converte para número antes de comparar
+  const numExpected = parseFloat(normalizedExpected);
+  const numObtained = parseFloat(normalizedObtained);
+
+  if (numExpected === numObtained) {
     Log.Message("✅ SUCESSO: O resultado '" + resultObtained + "' está correto.");
   } else {
-    // Se os valores forem diferentes, o teste falhou nesta verificação.
-    // Registra uma mensagem de erro detalhada. É uma boa prática mostrar tanto o valor
-    // esperado quanto o obtido para facilitar a identificação e correção do problema.
     Log.Error("❌ Fail Esperado: '" + resultExpected + "' | Obtido: '" + resultObtained + "'");
   }
 }
+
 
 /**
  * Executa uma expressão matemática completa e verifica o resultado.

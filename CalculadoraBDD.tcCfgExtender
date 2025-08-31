@@ -354,14 +354,7 @@
 					<Node name="2">
 						<Prp name="column" type="I" value="0"/>
 						<Prp name="description" type="S" value=""/>
-						<Prp name="line" type="I" value="126"/>
-						<Prp name="number" type="I" value="1"/>
-						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
-					</Node>
-					<Node name="3">
-						<Prp name="column" type="I" value="0"/>
-						<Prp name="description" type="S" value=""/>
-						<Prp name="line" type="I" value="164"/>
+						<Prp name="line" type="I" value="172"/>
 						<Prp name="number" type="I" value="2"/>
 						<Prp name="owner" type="S" value="{507B4E60-5686-4352-BD45-1E40B52152F0}"/>
 					</Node>
