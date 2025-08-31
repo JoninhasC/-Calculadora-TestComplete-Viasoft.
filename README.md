@@ -25,10 +25,15 @@ Foram criados cenários BDD para as 4 operações básicas da calculadora:
 ## 📂 Estrutura do Projeto
 Calculadora-TestComplete-Viasoft/
 │── Scripts/ # Scripts em JavaScript
+
 │── Features/ # Cenários BDD escritos em Gherkin
+
 │── Aliases/ # Mapeamento de objetos da Calculadora
+
 │── IA_DOCUMENTACAO.md # Registro do uso de IA
+
 │── README.md # Documentação principal
+
 
 ## 🚀 Como Executar o Projeto
 
