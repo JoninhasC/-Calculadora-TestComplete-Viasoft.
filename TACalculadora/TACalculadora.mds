@@ -17,7 +17,7 @@
 					<testItem name="Adicão" key="{8C5935FD-60CB-4058-9C1C-2EB360DAB410}" group="True" parallel="False" enabled="True" load="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 						<testParameters />
 						<children>
-							<testItem name="Somar" key="{97973C64-C27F-4A98-A765-99F6A83441F6}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}somar" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
+							<testItem name="Somar" key="{97973C64-C27F-4A98-A765-99F6A83441F6}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}sum" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 								<testParameters />
 								<environments activeCloud="SWT" />
 								<children />
@@ -27,7 +27,7 @@
 					<testItem name="Subtração" key="{3A164553-B74F-4B2E-ACD4-2E44E72D0966}" group="True" parallel="False" enabled="True" load="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 						<testParameters />
 						<children>
-							<testItem name="Subtrair" key="{64556BC8-A3A9-4F1F-9CB8-A817655810AF}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}subtrair" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
+							<testItem name="Subtrair" key="{64556BC8-A3A9-4F1F-9CB8-A817655810AF}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}subtraction" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 								<testParameters />
 								<environments activeCloud="SWT" />
 								<children />
@@ -37,7 +37,7 @@
 					<testItem name="Multiplicação" key="{74DE7451-6DB3-4B70-80B9-2E94BAAC0A79}" group="True" parallel="False" enabled="True" load="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 						<testParameters />
 						<children>
-							<testItem name="Multiplicar" key="{3FD43106-0D8E-46D3-A488-11BF6AD53BE9}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}multiplicar" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
+							<testItem name="Multiplicar" key="{3FD43106-0D8E-46D3-A488-11BF6AD53BE9}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}multiplication" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 								<testParameters />
 								<environments activeCloud="SWT" />
 								<children />
@@ -47,7 +47,7 @@
 					<testItem name="Divisão" key="{FEA6EE9A-6931-411A-86CA-B94119972BC0}" group="True" parallel="False" enabled="True" load="False" testMoniker="" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 						<testParameters />
 						<children>
-							<testItem name="Dividir" key="{ACFB9768-5665-4CE4-A59F-617839744C65}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}dividir" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
+							<testItem name="Dividir" key="{ACFB9768-5665-4CE4-A59F-617839744C65}" group="False" parallel="False" enabled="True" load="False" testMoniker="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}division" count="1" timeout="0" stopOnError="3" stopOnException="2" description="" tmsData="" testCase="True" lnID="{00000000-0000-0000-0000-000000000000}">
 								<testParameters />
 								<environments activeCloud="SWT" />
 								<children />

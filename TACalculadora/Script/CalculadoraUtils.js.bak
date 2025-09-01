@@ -89,8 +89,8 @@ function clickBut(button) {
       "*": () => operations.Multiplicar_por.Click(),
       "/": () => operations.Dividir_por.Click(),
       "=": () => operations.Igual_a.Click(),
-      "√": () => operations.Raiz_quadrada.Click(),
-      "%": () => operations.Por_cento.Click(),
+      //"√": () => operations.Raiz_quadrada.Click(),
+      //"%": () => operations.Por_cento.Click(),
 
       // Controles
       "CE": () => controls.Limpar_entrada.Click(),
@@ -129,27 +129,35 @@ function normalizeNumber(text) {
   return text.replace(/\./g, "").replace(",", ".");
 }
 
+// A função de normalização agora só precisa tratar o formato brasileiro (com vírgula).
+function normalizeNumberForComparison(textFromScreen) {
+  // Apenas substitui a vírgula decimal pela notação de ponto.
+  // Também removemos os pontos de milhar, que a calculadora pode exibir para números grandes.
+  return textFromScreen.replace(/\./g, "").replace(",", ".");
+}
+
 function checkResult(resultExpected) {
+  // 1. Obtém o resultado bruto da tela (ex: "1.234,56" ou "8,3")
   const resultObtained = Aliases.Microsoft_WindowsCalculator
     .Calculadora.NavView.LandmarkTarget
     .UIAObject("A_exibição_é_*")
     .UIAObject("TextContainer")
     .UIAObject("NormalOutput")
-    .Text
-    .trim();
+    .Text.trim();
 
-  // Normaliza
-  const normalizedExpected = normalizeNumber(resultExpected);
-  const normalizedObtained = normalizeNumber(resultObtained);
+  // 2. Normaliza APENAS o resultado obtido da tela para o formato padrão.
+  const normalizedObtained = normalizeNumberForComparison(resultObtained);
 
-  // Converte para número antes de comparar
-  const numExpected = parseFloat(normalizedExpected);
-  const numObtained = parseFloat(normalizedObtained);
-
-  if (numExpected === numObtained) {
+  // 3. Compara o resultado esperado (que já está no formato padrão) com o resultado normalizado.
+  if (resultExpected === normalizedObtained) {
     Log.Message("✅ SUCESSO: O resultado '" + resultObtained + "' está correto.");
   } else {
-    Log.Error("❌ Fail Esperado: '" + resultExpected + "' | Obtido: '" + resultObtained + "'");
+    // Para um log de erro mais informativo, podemos mostrar a comparação que falhou.
+    Log.Error(
+      "❌ FALHA: A comparação falhou. Esperado: '" + resultExpected + 
+      "' | Obtido (normalizado): '" + normalizedObtained + 
+      "' | Obtido (bruto): '" + resultObtained + "'"
+    );
   }
 }
 

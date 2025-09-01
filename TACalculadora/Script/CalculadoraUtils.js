@@ -89,8 +89,8 @@ function clickBut(button) {
       "*": () => operations.Multiplicar_por.Click(),
       "/": () => operations.Dividir_por.Click(),
       "=": () => operations.Igual_a.Click(),
-      "√": () => operations.Raiz_quadrada.Click(),
-      "%": () => operations.Por_cento.Click(),
+      //"√": () => operations.Raiz_quadrada.Click(),
+      //"%": () => operations.Por_cento.Click(),
 
       // Controles
       "CE": () => controls.Limpar_entrada.Click(),
@@ -116,7 +116,6 @@ function clickBut(button) {
   // Mantém o relatório de log limpo e bem estruturado.
   Log.PopLogFolder();
 }
-
 /**
  * Compara um resultado esperado com o valor atualmente exibido no display da calculadora.
  * Registra uma mensagem de sucesso ou erro no log de teste com base na comparação.

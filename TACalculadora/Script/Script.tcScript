@@ -4,7 +4,6 @@
 		<child name="EventsHooks" key="{7421B93C-A641-4F45-8C6D-C938EA45BD31}" path="EventsHooks.js" />
 		<child name="CalculadoraScripts" key="{22CA3D86-D61F-408E-AA3B-FC7799C3D566}" path="CalculadoraScripts.js" />
 		<child name="CalculadoraUtils" key="{507B4E60-5686-4352-BD45-1E40B52152F0}" path="CalculadoraUtils.js" />
-		<child name="TestCalc" key="{241DD296-C12E-495A-9879-31D7F7C88CA6}" path="TestCalc.js" />
 		<child name="Steps" key="{46B7DE36-BED7-4407-8F36-0D44584175A4}" path="Steps.js" />
 	</children>
 </Root>
