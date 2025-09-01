@@ -1,6 +1,6 @@
 # 📌 Automatização das 4 operações matemáticas por meio do TestComplete.
 
-Projeto desenvolvido para automação de testes da **Calculadora do Windows** utilizando **TestComplete** com **JavaScript** e cenários **BDD (Gherkin)**.
+Projeto desenvolvido para automação de testes da **Calculadora do Windows** utilizando **TestComplete** com **JavaScript** e cenários **BDD (Gherkin)**. Se tudo Estiver configurado apertar F5 roda todos os testes
 
 ---
 
